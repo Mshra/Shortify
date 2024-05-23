@@ -7,8 +7,14 @@ function DisplayURL({ shortUrl, setShortUrl }) {
     return;
   }
 
-  const handleDelete = () => {
-
+  const handleDelete = (shortUrl) => {
+    axios.delete(`${shortUrl}/delete`)
+      .then(() => {
+        console.log('deleted');
+      })
+      .catch(error =>
+        console.error(error)
+      )
   };
 
   const handleCopy = () => {
