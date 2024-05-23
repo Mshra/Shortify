@@ -50,6 +50,7 @@ const UrlRequester = () => {
         "original_url": { url }
       });
       setShortUrl(response.data.shorten_url);
+      console.log(shortUrl);
     } catch (error) {
       console.error('Error shortening URL:', error);
     }
