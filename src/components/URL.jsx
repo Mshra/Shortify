@@ -40,7 +40,7 @@ const UrlRequester = () => {
     setUrl('')
     e.preventDefault();
     try {
-      const response = await axios.post('https://shortify-backend.vercel.app/shorten', {
+      const response = await axios.post('https://sfy.vercel.app/shorten', {
         "original_url": { url }
       });
       setShortUrl(response.data.shorten_url);
