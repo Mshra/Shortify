@@ -2,7 +2,7 @@
 
 :root {
   background-image: url('./assets/polygon-scatter-haikei.svg');
-  aspect-ratio: 960 / 300;
+  aspect-ratio: 960 / 540;
   width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
