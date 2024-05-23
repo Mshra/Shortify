@@ -12,7 +12,7 @@ function NavIcon({ component, link }) {
 }
 
 function Header() {
-  const myGithub = "https://github.com/mshra";
+  const myGithub = "https://github.com/Mshra/shortify-frontend";
   const myTwitter = "https://x.com/callmeaaryan";
 
   return (
