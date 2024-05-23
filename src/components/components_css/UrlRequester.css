@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+.shortened-url {
+  margin-top: 2em;
+  font-size: 25px;
+  color: blue;
+  font-family: "Rubik", sans-serif;
+}
+
+.button {
+  margin-top: 5%;
+  display: flex;
+  align-items: center;
+  gap: 2em;
+}
+
+.copy-to-clipboard {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #007BFF;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 7%;
+  margin-bottom: 3%;
+}
+
+.copy-to-clipboard:hover {
+  background-color: #0056b3;
+}
+
+.display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid black;
+  margin-top: 2%;
+  margin-left: 20em;
+  margin-right: 20em;
+  border-radius: 5px;
+  background-color: #f8eee7;
+  margin-bottom: 5%;
+}
+
+.display-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #e3423a;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 7%;
+  margin-bottom: 3%;
+}
+
+.display-button:hover {
+  background-color: #a62222;
+}
+
+.url-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 50px;
+}
+
+.url-input {
+  width: 300px;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+  font-family: "Montserrat", sans-serif;
+}
+
+.url-input:focus {
+  border-color: #007BFF;
+  outline: none;
+}
+
+.url-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #007BFF;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.url-button:hover {
+  background-color: #0056b3;
+}
+
+.response, .error {
+  margin-top: 20px;
+  width: 80%;
+  max-width: 600px;
+  word-wrap: break-word;
+}
+
+.response pre, .error p {
+  background-color: #f8f8f8;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.error p {
+  color: #d9534f;
+}
