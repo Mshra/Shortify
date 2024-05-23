@@ -3,7 +3,7 @@ import X from '@mui/icons-material/X';
 import Icon from '@mui/material/Icon';
 
 
-function NavIcon({ component, link, color }) {
+function NavIcon({ component, link }) {
   return (
     <a href={link} target='_blank'>
       <Icon component={component} fontSize='large' htmlColor='#f8eee7' />

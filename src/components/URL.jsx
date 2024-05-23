@@ -40,12 +40,10 @@ const UrlRequester = () => {
     setUrl('')
     e.preventDefault();
     try {
-      const response = await axios.post('http://127.0.0.1:8000/shorten', {
+      const response = await axios.post('https://shortify-backend.vercel.app/shorten', {
         "original_url": { url }
       });
-      console.log(response.data, typeof (response.data))
       setShortUrl(response.data.shorten_url);
-      console.log(setShortUrl)
     } catch (error) {
       console.error('Error shortening URL:', error);
     }
