@@ -13,6 +13,7 @@ function DisplayURL({ shortUrl, setShortUrl }) {
       await axios.delete(`${shortUrl}/delete`)
         .then(() => {
           setShortUrl('');
+          alert('deleted!')
           console.log('deleted');
         })
     } catch (error) {
