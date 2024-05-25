@@ -1,7 +1,7 @@
 import GitHub from '@mui/icons-material/GitHub';
 import X from '@mui/icons-material/X';
+import LinkedIn from '@mui/icons-material/LinkedIn';
 import Icon from '@mui/material/Icon';
-
 
 function NavIcon({ component, link }) {
   return (
@@ -14,6 +14,7 @@ function NavIcon({ component, link }) {
 function Header() {
   const myGithub = "https://github.com/Mshra/shortify-frontend";
   const myTwitter = "https://x.com/callmeaaryan";
+  const myLinkedIn = "https://www.linkedin.com/in/callmeaaryan/"
 
   return (
     <header className='header'>
@@ -22,6 +23,7 @@ function Header() {
       <nav className='icons'>
         <NavIcon component={GitHub} link={myGithub} />
         <NavIcon component={X} link={myTwitter} />
+        <NavIcon component={LinkedIn} link={myLinkedIn} />
       </nav>
     </header>
   )
