@@ -2,6 +2,15 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './components_css/UrlRequester.css';  // Import the CSS file
 
+const isValidURL = (URL_String) => {
+  try {
+    new URL(URL_String)
+    return true;
+  } catch (err) {
+    return false;
+  }
+}
+
 function DisplayURL({ shortUrl, setShortUrl }) {
   if (!shortUrl) {
     return;
@@ -47,6 +56,12 @@ const UrlRequester = () => {
   };
 
   const handleSubmit = async (e) => {
+
+    if (!isValidURL(url)) {
+      alert('Enter a valid URL!')
+      return;
+    }
+
     setUrl('')
     e.preventDefault();
     try {
