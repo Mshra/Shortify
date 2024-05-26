@@ -62,7 +62,7 @@ const UrlRequester = () => {
 
     if (!checkURL(url)) {
       alert('Enter a valid URL');
-      setUrl('')
+      return;
     }
 
     e.preventDefault();
@@ -71,6 +71,7 @@ const UrlRequester = () => {
         "original_url": { url }
       });
       setShortUrl(response.data.shorten_url);
+      setUrl('')
     } catch (error) {
       console.error('Error shortening URL:', error);
     }
