@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import 'dotenv/config'
 import './components_css/UrlRequester.css';
 
 function DisplayURL({ shortUrl, setShortUrl }) {
@@ -51,7 +52,7 @@ const UrlRequester = () => {
     if (checkURL(url)) {
       e.preventDefault();
       try {
-        const response = await axios.post('https://sfy.vercel.app/shorten', {
+        const response = await axios.post(`${process.env.API}/shorten`, {
           "original_url": { url }
         });
         setShortUrl(response.data.shorten_url);
