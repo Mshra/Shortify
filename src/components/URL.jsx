@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import './components_css/UrlRequester.css';  // Import the CSS file
-
+import './components_css/UrlRequester.css';
 
 function DisplayURL({ shortUrl, setShortUrl }) {
   if (!shortUrl) {
@@ -22,10 +21,6 @@ function DisplayURL({ shortUrl, setShortUrl }) {
     }
   };
 
-  const handleCopy = () => {
-    navigator.clipboard.writeText(shortUrl)
-  };
-
   return (
     <div className='display'>
       <div className='shortened-url'>
@@ -33,7 +28,7 @@ function DisplayURL({ shortUrl, setShortUrl }) {
       </div>
       <div className='button'>
         <button className='display-button' onClick={handleDelete}>Delete</button>
-        <button className='copy-to-clipboard' onClick={handleCopy}>Copy to clipboard</button>
+        <button className='copy-to-clipboard' onClick={() => navigator.clipboard.writeText(shortUrl)}>Copy to clipboard</button>
       </div>
     </div>
   )
@@ -42,11 +37,6 @@ function DisplayURL({ shortUrl, setShortUrl }) {
 const UrlRequester = () => {
   const [url, setUrl] = useState('');
   const [shortUrl, setShortUrl] = useState('');
-
-  const handleInputChange = e => {
-    setUrl(e.target.value);
-  };
-
 
   const checkURL = URL_String => {
     try {
@@ -57,23 +47,20 @@ const UrlRequester = () => {
     }
   }
 
-
   const handleSubmit = async e => {
-
-    if (!checkURL(url)) {
-      alert('Enter a valid URL');
-      return;
-    }
-
-    e.preventDefault();
-    try {
-      const response = await axios.post('https://sfy.vercel.app/shorten', {
-        "original_url": { url }
-      });
-      setShortUrl(response.data.shorten_url);
-      setUrl('')
-    } catch (error) {
-      console.error('Error shortening URL:', error);
+    if (checkURL(url)) {
+      e.preventDefault();
+      try {
+        const response = await axios.post('https://sfy.vercel.app/shorten', {
+          "original_url": { url }
+        });
+        setShortUrl(response.data.shorten_url);
+        setUrl('')
+      } catch (error) {
+        console.error('Error shortening URL:', error);
+      }
+    } else {
+      alert('Enter valid URL!')
     }
   };
 
@@ -83,7 +70,7 @@ const UrlRequester = () => {
         <input
           type="text"
           value={url}
-          onChange={handleInputChange}
+          onChange={e => setUrl(e.target.value)}
           placeholder="Enter URL"
           className="url-input"
         />
