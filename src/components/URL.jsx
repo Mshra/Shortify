@@ -52,7 +52,7 @@ const UrlRequester = () => {
     if (checkURL(url)) {
       e.preventDefault();
       try {
-        const response = await axios.post(`${import.meta.env.API}/shorten`, {
+        const response = await axios.post(`${import.meta.env.VITE_API}/shorten`, {
           "original_url": { url }
         });
         setShortUrl(response.data.shorten_url);
