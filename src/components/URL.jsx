@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import 'dotenv/config'
+// import 'dotenv/config'
 import './components_css/UrlRequester.css';
 
 function DisplayURL({ shortUrl, setShortUrl }) {
@@ -8,7 +8,7 @@ function DisplayURL({ shortUrl, setShortUrl }) {
     return;
   }
 
-  const handleDelete = async (e) => {
+  const handleDelete = async e => {
     e.preventDefault;
     try {
       await axios.delete(`${shortUrl}/delete`)
@@ -52,7 +52,7 @@ const UrlRequester = () => {
     if (checkURL(url)) {
       e.preventDefault();
       try {
-        const response = await axios.post(`${import.meta.env.VITE_API}/shorten`, {
+        const response = await axios.post(`${import.meta.env.VITE_API_URL}/shorten`, {
           "original_url": { url }
         });
         setShortUrl(response.data.shorten_url);
