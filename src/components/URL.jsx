@@ -15,7 +15,6 @@ function DisplayURL({ shortUrl, setShortUrl }) {
         .then(() => {
           setShortUrl('');
           alert('deleted!')
-          console.log('deleted');
         })
     } catch (error) {
       console.error(error);
@@ -53,9 +52,9 @@ const UrlRequester = () => {
       e.preventDefault();
       try {
         const response = await axios.post(`${import.meta.env.VITE_API_URL}/shorten`, {
-          "original_url": { url }
+          "originalUrl": { url }
         });
-        setShortUrl(response.data.shorten_url);
+        setShortUrl(response.data.shortenUrl);
         setUrl('')
       } catch (error) {
         console.error('Error shortening URL:', error);
