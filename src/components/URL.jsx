@@ -54,7 +54,7 @@ const UrlRequester = () => {
         const response = await axios.post(`${import.meta.env.VITE_API_URL}/shorten`, {
           "originalUrl": { url }
         });
-        setShortUrl(response.data.shortenUrl);
+        setShortUrl(response.data.shortUrl);
         setUrl('')
       } catch (error) {
         console.error('Error shortening URL:', error);
